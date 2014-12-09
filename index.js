@@ -18,7 +18,7 @@ tesselate({
       });
 
    // uncomment this to see all AT-commands in/out
-   // require('./debug')(uart);
+   require('./debug')(uart);
 
    (function loopAmbient() {
       setImmediate(function() {
@@ -85,6 +85,9 @@ tesselate({
                linemode();
                timeout(0);
                wait(/\+CMGS: \d+/);
+               perform(function(){
+                  console.log('Done sending');
+               })
             }, done);
          }
       });
