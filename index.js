@@ -17,7 +17,8 @@ tesselate({
          baudrate: 115200
       });
 
-   require('./debug')(uart);
+   // uncomment this to see all AT-commands in/out
+   // require('./debug')(uart);
 
    (function loopAmbient() {
       setImmediate(function() {
@@ -84,20 +85,10 @@ tesselate({
                linemode();
                timeout(0);
                wait(/\+CMGS: \d+/);
-            }, function(err) {
-               done(err);
-            });
+            }, done);
          }
       });
       ifOk('waitSMS');
    });
-/*
-   setInterval(function(){
-      console.log(
-         'Light: ' + latestData.light +
-         ', Sound: ' + latestData.sound +
-         ', Temperature: ' + latestData.temp +
-         ', Humidity: ' + latestData.humid);
-   }, 1000);
-*/
+
 });
