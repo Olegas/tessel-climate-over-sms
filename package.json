@@ -6,12 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Oleg Elifantiev <oleg@elifantiev.ru>",
   "license": "ISC",
   "dependencies": {
     "tesselate": "0.0.2",
     "climate-si7005": "~0.1.3",
     "chunking-streams": "0.0.7-b1",
-    "ambient-attx4": "~0.2.4"
+    "ambient-attx4": "~0.2.4",
+    "uart-commander": "0.0.2"
   }
 }
